@@ -1,0 +1,72 @@
+<div class="spinner">
+
+    <div *ngIf="calcPrediction">
+      <h4>Solving the ODE system...</h4>
+      <mat-spinner>
+      </mat-spinner>
+    </div>
+  
+</div>
+  
+
+<div [hidden]="!predsOK">
+
+    <div style="display: flex; flex-grow: grow" class="spacer">
+    
+        <mat-card class="form">
+        
+            <mat-card-header>
+              <mat-card-title>Bioaccumulation Plots</mat-card-title>
+            </mat-card-header>
+            
+            <mat-card-content>
+              <p>
+                Please select the species you want to plot
+              </p>
+            </mat-card-content>
+            
+            <mat-card-actions>
+                
+                <section class="check-section">
+                    <span class="list-section">
+                      <mat-checkbox class="margin"
+                                    [checked]="allComplete"
+                                    [indeterminate]="someComplete()"
+                                    (change)="setAll($event.checked)">
+                        {{outFeats.name}}
+                      </mat-checkbox>
+                    </span>
+                    <span class="list-section">
+                      <ul>
+                        <li *ngFor="let subtask of outFeats.subtasks">
+                          <mat-checkbox [(ngModel)]="subtask.completed"
+                                        [color]="subtask.color"
+                                        (change)="updateAllComplete()">
+                            {{subtask.name}}
+                          </mat-checkbox>
+                        </li>
+                      </ul>
+                    </span>
+                </section>
+
+            </mat-card-actions>  
+              
+          </mat-card>
+
+          <div *ngIf="showChart" class="chart"> 
+            <apx-chart
+              [series]="predsOptions.series"
+              [chart]="predsOptions.chart"
+              [xaxis]="predsOptions.xaxis"          
+              [yaxis]="predsOptions.yaxis"          
+              [dataLabels]="predsOptions.dataLabels"
+              [tooltip]="predsOptions.tooltip"
+              [grid]="predsOptions.grid"
+              [stroke]="predsOptions.stroke"
+              [title]="predsOptions.title"
+            ></apx-chart>
+        </div>
+    
+    </div>
+
+</div>

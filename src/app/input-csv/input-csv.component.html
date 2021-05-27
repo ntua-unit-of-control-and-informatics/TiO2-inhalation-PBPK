@@ -1,0 +1,94 @@
+
+<div style="display: flex; flex-grow: grow" class="spacer">
+
+    <div class="inputs">
+      <mat-card class="upload-card">
+      
+        <mat-card-header>
+          <mat-card-title>Upload an Exposure Scenario</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>
+           Please upload a csv file containing the exposure scenario
+          </p>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          
+          <button matTooltip="Download dataset (csv) template" mat-icon-button color="primary" (click)="downloadTemplate()">
+            <mat-icon>arrow_downward</mat-icon>
+          </button>
+    
+          <button matTooltip="Upload dataset (csv)" mat-icon-button color="accent"
+          type="button" onclick="document.getElementById('fileToUpload').click()">
+          <mat-icon>arrow_upward</mat-icon>
+        </button>
+    
+        <input #dataInput id="fileToUpload" type="file" style="display:none;" accept=".csv" multiple="multiple"
+            (change)="uploadDataset($event.target.files)">
+        </mat-card-actions>
+      
+      </mat-card>
+    
+      <mat-card class="form">
+          
+        <mat-card-header>
+          <mat-card-title>Set the Simulation Parameters</mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-content>
+          <p>
+            Please provide the necessary simulation information
+          </p>
+        </mat-card-content>
+        
+        <mat-card-actions>
+          
+          <div [formGroup]="inputValues" class="forms">
+        
+            <mat-form-field>
+              <mat-label>Simulation start (days)</mat-label>
+              <input matInput disabled value="0" >
+            </mat-form-field>
+            
+            <mat-form-field>
+              <mat-label>Time increment (days)</mat-label>
+              <input matInput disabled value="1">
+            </mat-form-field>
+            
+            <mat-form-field>
+              <mat-label>Simulation end (days)</mat-label>
+              <input matInput placeholder="80" formControlName="simend">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+              <mat-label>Weight (kg)</mat-label>
+              <input matInput placeholder="70" formControlName="weight">
+            </mat-form-field>
+            
+            <mat-form-field class="full-width">
+              <mat-label>Size (nm)</mat-label>
+              <input matInput placeholder="100" formControlName="size">
+            </mat-form-field>
+          </div>
+        </mat-card-actions>  
+          
+      </mat-card>
+    
+    </div>
+    
+    <!--The content below is only a placeholder and can be replaced.-->
+    <div *ngIf="csvGiven">
+      <app-view-input [data]="dispSeries"></app-view-input>
+    </div>
+  </div>
+  
+  <button mat-button (click)="onSubmit()" class="button-class">Run the Simulation</button>
+  
+  
+  <div *ngIf="goToPrediction">
+    <app-predictions [timeseries]="timeseries"></app-predictions>
+  
+  </div>
+  
