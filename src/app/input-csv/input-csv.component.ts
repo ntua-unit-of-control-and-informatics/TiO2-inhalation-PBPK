@@ -49,7 +49,7 @@ export class InputCsvComponent implements OnInit {
   inputValues = this._fb.group({
     simstart: ['0'],
     simend: ['', Validators.required],
-    simstep: ['1'],
+    simstep: ['', Validators.required],
     weight: ['', Validators.required],
     size: ['', Validators.required],
   });

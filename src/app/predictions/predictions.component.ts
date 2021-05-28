@@ -35,7 +35,7 @@ export class PredictionsComponent implements OnInit {
   };
 
   outFeats: DispFeats = {
-    name: "Plot all species",
+    name: "Plot all organs/tissues",
     completed: false,
     color: "primary",
     subtasks: []
@@ -151,7 +151,7 @@ export class PredictionsComponent implements OnInit {
         "stroke.width": 0.5
       };
       console.log(this.chartFields)
-      this.predsOptions = this._charts.getDataChart(this.chartFields, "time", "Concentration (mg/g)", "Time (hours)", false)
+      this.predsOptions = this._charts.getDataChart(this.chartFields, "time", "TiO2 mass (μg)", "Time (hours)", false)
       console.log('keys', Object.keys(this.predsOptions))
       console.log(this.predsOptions)
       this.showChart = true;
