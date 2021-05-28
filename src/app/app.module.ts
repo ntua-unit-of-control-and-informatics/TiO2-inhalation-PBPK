@@ -39,9 +39,10 @@ import { ServerErrorComponent } from './dialogs/server-error/server-error.compon
 import { ViewInputComponent } from './view-input/view-input.component';
 import { PredictionsComponent } from './predictions/predictions.component';
 import { MalformedInputComponent } from './dialogs/malformed-input/malformed-input.component';
+import { IntroComponent } from './intro/intro.component';
 // import { ErrorMessageComponent } from './error-message/error-message.component';
 // import { PredictionsComponent } from './predictions/predictions.component';
-// import { IntroComponent } from './intro/intro.component';
+//import { IntroComponent } from './intro/intro.component';
 // import { InputTypeErrorComponent } from './input-type-error/input-type-error.component';
 
 
@@ -55,6 +56,7 @@ import { MalformedInputComponent } from './dialogs/malformed-input/malformed-inp
     ViewInputComponent,
     PredictionsComponent,
     MalformedInputComponent,
+    IntroComponent,
     // DatasetCsvComponent,
     // InputChartComponent,
     // ErrorMessageComponent,

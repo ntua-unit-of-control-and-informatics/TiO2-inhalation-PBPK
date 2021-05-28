@@ -54,7 +54,7 @@ export class ViewInputComponent implements OnInit {
           }
         },
         "title": {
-          text: "Exposure concentration (ug/m^3)",
+          text: "Exposure concentration (μg/m^3)",
           align: "center"
 
         },

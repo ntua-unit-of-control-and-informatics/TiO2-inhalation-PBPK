@@ -1,6 +1,6 @@
 export const TITLE = "NanoInhale";
 
-export const DESCRIPTION = "V.1 of the human TiO2 inhalation PBPK model.";
+export const DESCRIPTION = " This web application presents a PBPK model for describing the biodistribution of TiO2 in humans after inhalation exposure";
 
 export const TAB_TITLE = "NanoInhale";
 

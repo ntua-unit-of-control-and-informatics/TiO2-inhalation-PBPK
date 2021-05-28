@@ -16,7 +16,7 @@
         
         <mat-card-actions>
           
-          <button matTooltip="Download dataset (csv) template" mat-icon-button color="primary" (click)="downloadTemplate()">
+          <button matTooltip="Download dataset template (csv) " mat-icon-button color="primary" (click)="downloadTemplate()">
             <mat-icon>arrow_downward</mat-icon>
           </button>
     
@@ -48,17 +48,17 @@
           <div [formGroup]="inputValues" class="forms">
         
             <mat-form-field>
-              <mat-label>Simulation start (days)</mat-label>
+              <mat-label>Simulation start (hours)</mat-label>
               <input matInput disabled value="0" >
             </mat-form-field>
             
             <mat-form-field>
-              <mat-label>Time increment (days)</mat-label>
+              <mat-label>Time increment (hours)</mat-label>
               <input matInput disabled value="1">
             </mat-form-field>
             
             <mat-form-field>
-              <mat-label>Simulation end (days)</mat-label>
+              <mat-label>Simulation end (hours)</mat-label>
               <input matInput placeholder="80" formControlName="simend">
             </mat-form-field>
             
