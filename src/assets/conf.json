@@ -5,7 +5,7 @@
     "__stsServer": "https://login.cloud.nanosolveit.eu/auth/realms/nanosolveit",
     "stsServer": "https://login.cloud.nanosolveit.eu/auth/realms/nanosolveit",
     "__redirect_url" : "http://localhost:4200/",
-    "redirect_url" : "http://localhost:4200/", 
+    "redirect_url" : "https://nanoinhale.cloud.nanosolveit.eu/", 
     "client_id":"nanosolveit",
     "response_type" : "code",
     "scope": "openid email profile",

@@ -120,7 +120,7 @@ export function configureAuth(oidcConfigService: OidcConfigService, httpClient: 
               silentRenew: true,
               silentRenewUrl: customConfig.silent_redirect_url,
               postLogoutRedirectUri: window.location.origin,
-              logLevel: LogLevel.Debug, // LogLevel.Warn,
+              logLevel: LogLevel.Warn, // LogLevel.Debug,
               maxIdTokenIatOffsetAllowedInSeconds: 120,
               historyCleanupOff: false,
               autoUserinfo: false,
